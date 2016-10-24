@@ -203,14 +203,11 @@ class Calculator {
   
   func totalSalesRevenueCalculation(originalPrice: String, numberOfUnits: String, markUpPercent: String) -> String {
     
-    let origUnitPrice: Double = originalUnitPrice(originalPrice: originalPrice.stringToDouble,
-                                                  numberOfUnits: numberOfUnits.stringToInt)
-    
     let markPrice: Double = markUpUnitPrice(originalPrice: originalPrice.stringToDouble,
                                             numberOfUnits: numberOfUnits.stringToInt,
                                             markUpPercent: markUpPercent.stringToInt)
     
-    let totalSalesRevenue: Double = (markPrice - origUnitPrice) * numberOfUnits.stringToDouble
+    let totalSalesRevenue: Double = markPrice * numberOfUnits.stringToDouble
     
     return String(format: "$%.2f", totalSalesRevenue)
     
